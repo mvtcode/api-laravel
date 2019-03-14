@@ -1,0 +1,93 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Documents",
+        "description": "API Documents description for Emotiv subscription",
+        "contact": {
+            "email": "dev@emotiv.com"
+        },
+        "license": {
+            "name": "Emotiv@2018",
+            "url": "https://www.emotiv.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/api",
+            "description": "Server dev"
+        },
+        {
+            "url": "https://dev-services.emotiv.com/api",
+            "description": "Server Staging"
+        },
+        {
+            "url": "https://services.emotiv.com/api",
+            "description": "Server Live"
+        }
+    ],
+    "paths": {
+        "/users": {
+            "get": {
+                "tags": [
+                    "Example"
+                ],
+                "summary": "Get list users",
+                "description": "Returns list users",
+                "operationId": "getUsersList",
+                "responses": {
+                    "200": {
+                        "description": "List users"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key_security_example": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Example"
+                ],
+                "summary": "Add new users",
+                "description": "Add new users",
+                "operationId": "addUsers",
+                "responses": {
+                    "200": {
+                        "description": "New user info"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    }
+                },
+                "security": [
+                    {
+                        "api_key_security_example": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "Password Based": {
+                "type": "oauth2",
+                "description": "Use a global client_id / client_secret and your username / password combo to obtain a token",
+                "in": "header",
+                "flows": {
+                    "password": {
+                        "authorizationUrl": "/oauth/authorize",
+                        "tokenUrl": "/oauth/token",
+                        "refreshUrl": "/oauth/token/refresh",
+                        "scopes": []
+                    }
+                },
+                "scheme": "https"
+            }
+        }
+    }
+}

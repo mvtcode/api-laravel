@@ -4,6 +4,7 @@
         "server": "php artisan serve",
         "composer:update": "composer update --no-scripts",
         "artisan:clearCache": "php artisan cache:clear && php artisan config:cache",
+        "generate:docs": "php artisan l5-swagger:generate",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "watch": "npm run development -- --watch",
